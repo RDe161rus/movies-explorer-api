@@ -7,4 +7,4 @@
  Дипломного проекта Api-Movie.
 
 ## Ссылка на проект
-[api.movie.dip.nomoredomainsmonster.ru](api.movie.dip.nomoredomainsmonster.ru)
+[api.r-diplom.movies.nomoredomainsmonster.ru](api.r-diplom.movies.nomoredomainsmonster.ru)
