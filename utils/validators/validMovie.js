@@ -17,4 +17,10 @@ const movieValid = celebrate({
   }),
 });
 
-module.exports = { movieValid };
+const delMovieValid = celebrate({
+  params: Joi.object().keys({
+    _id: Joi.string().length(24).hex().required(),
+  }),
+});
+
+module.exports = { movieValid, delMovieValid };
