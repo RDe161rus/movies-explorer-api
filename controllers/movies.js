@@ -14,6 +14,7 @@ const getMovies = (req, res, next) => {
 };
 
 const createMovie = (req, res, next) => {
+  const ownerId = req.user._id;
   const {
     country,
     director,
@@ -27,7 +28,6 @@ const createMovie = (req, res, next) => {
     nameRU,
     nameEN,
   } = req.body;
-  const owner = req.user._id;
   MovieModel.create({
     country,
     director,
@@ -40,7 +40,7 @@ const createMovie = (req, res, next) => {
     movieId,
     nameRU,
     nameEN,
-    owner,
+    owner: ownerId,
   })
     .then((data) => {
       res.status(201).send(data);
