@@ -20,6 +20,7 @@ const options = {
   origin: [
     'http://localhost:3000',
     'http://localhost:3001',
+    'http://rd-movies.nomoredomainswork.ru',
     'https://rd-movies.nomoredomainswork.ru',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
