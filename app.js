@@ -16,10 +16,20 @@ const app = express();
 app.use(express.json());
 app.use(helmet());
 
-app.use(cors({
-  origin: 'https://rd-movies.nomoredomainswork.ru',
+const options = {
+  origin: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'http://rd-movies.nomoredomainswork.ru',
+    'https://rd-movies.nomoredomainswork.ru',
+  ],
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
   credentials: true,
-}));
+};
+app.use(cors(options));
 app.use(limiter);
 app.use(requestLogger);
 app.use(appRouter);
